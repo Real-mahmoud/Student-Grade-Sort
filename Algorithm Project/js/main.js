@@ -16,33 +16,18 @@ window.addEventListener('load', () => {
 
     let sort = document.querySelectorAll('p');
     for (let i = 0; i < sort.length; i++) {
-        sort[i].addEventListener('click', function () {
-
-            
-
-          if (data[0].value !=='' && data[1].value !=='') {
-              
-                
+        sort[i].addEventListener('click', function () {        
+          if (data[0].value !=='' && data[1].value !=='') {                              
             let names = data[0].value.trim().split('\n').map(e => e.trim());
             let degree = data[1].value.trim().split('\n').map(e => e.trim());
-            
-            console.log(degree);
-            
+
             // average
             for (let i = 0; i < degree.length; i++) {
                 if (!isNaN(degree[i])) {
                     sum+=+degree[i]; 
                 }
-            }
-            console.log(sum);
-            
+            }            
             avg=sum/degree.length;
-            
-            console.log(avg.toFixed(2));
-            
-            
-
-           
 
             // Combine name and degree into an array of objects
             let students = names.map((name, index) => ({
@@ -65,18 +50,15 @@ window.addEventListener('load', () => {
             sortedTable(students);
             data[0].value='';
             data[1].value='';
+            sum=0;
             avg=0;
-            console.log(students);
          }
         });
-       
-    }
-   
+    }  
 });
 
 
-const sortedTable=function (data){
-    
+const sortedTable=function (data){   
     let table=document.createElement('table');
     let thead=document.createElement('thead');
     let td1=document.createElement('td');
@@ -98,7 +80,6 @@ const sortedTable=function (data){
         table.appendChild(tr); 
     }
     
-
     let tr=document.createElement('tr');
     let theAvg=document.createElement('td');
     let average=document.createElement('td');
@@ -111,6 +92,4 @@ const sortedTable=function (data){
     document.body.appendChild(table);
     let br=document.createElement('br');
     document.body.appendChild(br);
-
-
 }
