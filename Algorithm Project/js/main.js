@@ -65,7 +65,7 @@ window.addEventListener('load', () => {
             sortedTable(students);
             data[0].value='';
             data[1].value='';
-            
+            avg=0;
             console.log(students);
          }
         });
