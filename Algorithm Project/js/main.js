@@ -109,7 +109,6 @@ const sortedTable=function (data){
     tr.appendChild(average);  
     table.appendChild(tr); 
     document.body.appendChild(table);
-    let hr=document.createElement('hr');
-    document.body.appendChild(hr);
+    
 
 }
