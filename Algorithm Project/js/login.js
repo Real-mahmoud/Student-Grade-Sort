@@ -4,7 +4,7 @@ window.addEventListener('load',function(){
 
     form.addEventListener('submit',(e)=>{
         e.preventDefault();
-        let username = document.getElementById('name').value;
+        let username = document.getElementById('name').value.toLowerCase();
         let password = document.getElementById('pw').value;
 
         if (username==='admin' && password==='1234') {
