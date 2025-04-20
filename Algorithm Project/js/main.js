@@ -84,7 +84,8 @@ const sortedTable=function (data){
     let theAvg=document.createElement('td');
     let average=document.createElement('td');
     theAvg.innerHTML=`Average`
-    average.innerHTML=`${avg}`
+    theAvg.style.cssText='color:#ff00ff; font-size:19px;'
+    average.innerHTML=`${avg.toFixed(2)}`
 
     tr.appendChild(theAvg);
     tr.appendChild(average);  
