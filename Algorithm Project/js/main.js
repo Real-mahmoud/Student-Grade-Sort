@@ -21,6 +21,7 @@ window.addEventListener('load', () => {
             let names = data[0].value.trim().split('\n').map(e => e.trim());
             let degree = data[1].value.trim().split('\n').map(e => e.trim());
 
+
             // average
             for (let i = 0; i < degree.length; i++) {
                 if (!isNaN(degree[i])) {
@@ -37,19 +38,28 @@ window.addEventListener('load', () => {
 
             switch (i) {
                 case 0:
+                    mergeSortTime=0;
                     students = mergeSort(students, 'degree');
+                    console.log(`mergeSort time : ${mergeSortTime.toFixed(2)} ms`);
+
                     break;
                 case 1:
+                    quickSortTime=0;
                     students = quickSort(students, 'degree');
+                    console.log(`quickSort time :${quickSortTime.toFixed(2)} ms`);
+
                     break;
                 case 2:
+                    radixSortTime=0;
                     students = radixSort(students, 'degree');
+                    console.log(`radixSort time :${radixSortTime.toFixed(2)} ms`);
+
                     break;
             }
 
             sortedTable(students);
-            data[0].value='';
-            data[1].value='';
+            // data[0].value='';
+            // data[1].value='';
             sum=0;
             avg=0;
          }
